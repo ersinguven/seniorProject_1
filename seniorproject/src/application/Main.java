@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -26,8 +27,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import java.io.File;
+import javafx.util.Duration;
 
+import java.io.File;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Main extends Application{
     int tur=0;
@@ -106,7 +110,7 @@ public class Main extends Application{
         double slide=71.0f;
         double Width= 40.0f;
         double Height= 50.0f;
-        for(int a=1; a<107; a++) {
+        for(int a=1; a<107; a++) { //The stones are created
 
             if(a%13==0) {
                 label =new Text(Integer.toString(13));
@@ -528,6 +532,7 @@ public class Main extends Application{
     EventHandler<ActionEvent> destro = new EventHandler<ActionEvent>() {
         public void handle(ActionEvent e)
         {
+            int delay = 0;
             mediaPlayer_3.stop();
             mediaPlayer_3.play();
             root.getChildren().remove(nextPlayer);
@@ -536,14 +541,29 @@ public class Main extends Application{
             cotacter(p1throw, p2, p2throw, P2_Drop, P1_Drop);
             p4throw.clear();
             tasSayisi(text);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
             System.out.println("P3 TÝME");
             cotacter(p2throw, p3, p3throw, P3_Drop, P2_Drop);
             p1throw.clear();
             tasSayisi(text);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
             System.out.println("P4 TÝME");
             cotacter(p3throw, p4, p4throw, P4_Drop, P3_Drop);
             p2throw.clear();
             tasSayisi(text);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e1) {
+                e1.printStackTrace();
+            }
             fill_Box=0;
             tur++;
             if(tur>0) {
