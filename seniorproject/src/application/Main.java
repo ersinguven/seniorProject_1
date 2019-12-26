@@ -84,12 +84,15 @@ public class Main extends Application{
     String soundFile_1 = "C:\\Users\\ersin\\Desktop\\School\\Data Structure\\seniorproject\\src\\application\\click_2.mp3";
     String soundFile_2 = "C:\\Users\\ersin\\Desktop\\School\\Data Structure\\seniorproject\\src\\application\\click_3.mp3";
     String soundFile_3 = "C:\\Users\\ersin\\Desktop\\School\\Data Structure\\seniorproject\\src\\application\\turn_1.mp3";
+    String soundFile_4 = "C:\\Users\\ersin\\Desktop\\School\\Data Structure\\seniorproject\\src\\application\\start.mp3";
     Media sound_1 = new Media(new File(soundFile_1).toURI().toString());
     Media sound_2 = new Media(new File(soundFile_2).toURI().toString());
     Media sound_3 = new Media(new File(soundFile_3).toURI().toString());
+    Media sound_4 = new Media(new File(soundFile_4).toURI().toString());
     MediaPlayer mediaPlayer_1 = new MediaPlayer(sound_1);
     MediaPlayer mediaPlayer_2 = new MediaPlayer(sound_2);
     MediaPlayer mediaPlayer_3 = new MediaPlayer(sound_3);
+    MediaPlayer mediaPlayer_4 = new MediaPlayer(sound_4);
 
     @Override
     public void start(Stage primaryStage) {
@@ -251,6 +254,7 @@ public class Main extends Application{
         public void handle(ActionEvent e)
         {
 
+            mediaPlayer_4.play();
 
             root.getChildren().remove(btn);
             p1= new ArrayList<>();
